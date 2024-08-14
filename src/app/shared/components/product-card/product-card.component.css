@@ -1,0 +1,14 @@
+.description-container {
+  height: 200px;
+  position: relative;
+}
+
+.scroll-container {
+  position: absolute;
+  height: 200px;
+  top: 0;
+  left: 0;
+  bottom: 50px;
+  right: 0;
+  overflow: auto;
+}

@@ -1,0 +1,21 @@
+<div class="container min-vh-100">
+
+  <h1 class="text-center fw-bold p-5">{{searchResultHeader}}</h1>
+
+  <div class="items">
+    <div class="cards row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 ">
+
+      <product-card *ngFor="let product of products" [product]="product"></product-card>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="loading"
+     class="loader d-flex position-fixed top-0 start-0 w-100 h-100 align-items-center justify-content-center">
+  <div class="lds-circle d-inline-block position-absolute">
+    <div class="d-inline-block bg-primary rounded-5">
+      <div class="little-circle d-inline-block bg-white rounded-5"></div>
+    </div>
+  </div>
+</div>

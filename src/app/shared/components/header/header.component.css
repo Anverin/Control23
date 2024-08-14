@@ -1,0 +1,6 @@
+.nav-item a:hover {
+  color: #000000 !important;
+}
+.nav-item a.active {
+  color: #000000 !important;
+}

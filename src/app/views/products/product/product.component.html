@@ -1,0 +1,14 @@
+<div class="container min-vh-100">
+  <h2 class="text-center fw-bold p-5">{{product.title}}</h2>
+  <div class="card h-100 align-items-center">
+    <img src="{{product.image}}" class="card-img-top" alt="tea">
+
+    <div class="card-body">
+      <p class="card-text text-center">{{product.description}}</p>
+      <h5 class="card-price fw-bold mt-5 mb-3">Цена: {{product.price}} рублей</h5>
+      <a [routerLink]="['/order']" [queryParams]="{product: product.title}"
+         class="btn btn-primary px-lg-5 px-md-3 px-sm-1 hvr-grow-shadow">Купить</a>
+    </div>
+  </div>
+</div>
+

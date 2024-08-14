@@ -1,0 +1,11 @@
+<div class="card h-100">
+  <img src="{{product.image}}" class="card-img-top" alt="tea">
+
+  <div class="card-body">
+    <h5 class="card-title fw-bold">{{product.title}}</h5>
+    <div class="description-container mb-3"> <p class="card-text scroll-container pe-1">{{product.description}}</p></div>
+    <a [routerLink]="['/catalogue', product.id]" class="btn btn-primary px-lg-5 px-md-3 px-sm-1 hvr-grow-shadow">Подробнее</a>
+  </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+<header>
+  <nav class="header navbar navbar-expand-lg bg-secondary bg-opacity-10 p-3">
+    <div class="container-fluid">
+      <a href="#" class="logo navbar-brand me-5"><img src="../../../../assets/images/logo.png" alt="logo"></a>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link link-secondary fs-5" [routerLink]="'/'" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-secondary fs-5 " [routerLink]="'/catalogue'" routerLinkActive="active">Каталог</a>
+          </li>
+
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-1 p-2 rounded-2" type="search" placeholder="Поиск чая" aria-label="Search" [(ngModel)]="searchInputValue" name="searchInputValue">
+          <a class="btn btn-outline-primary py-2 px-4 mx-2 hvr-shadow-radial" [routerLink]="'/catalogue'" [queryParams]="{search: searchInputValue}">Найти</a>
+          <a class="btn btn-outline-primary py-2 px-4 mx-2 hvr-shadow-radial" [routerLink]="'/catalogue'" (click)="clearSearchInput()">Сброс</a>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 0 calc(0px - (100vw - 100%)) 0 0;
+}
+
+
