@@ -1,8 +1,6 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {Observable, Subscription} from "rxjs";
-import {Modal} from "bootstrap";
-
-declare var $: any;
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'main-component',
@@ -15,33 +13,44 @@ export class MainComponent implements OnInit, OnDestroy {
 
   public static firstVisit: boolean = true;
 
-  public modal!: Modal;
+  @ViewChild('modal', {static: true})
+  private modal!: TemplateRef<any>;
 
   private subscription: Subscription | null = null;
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
     this.observable = new Observable((observer) => {
       setTimeout(() => {
         observer.next();
       }, 10000);
     })
-
   }
 
   ngOnInit(): void {
     if (MainComponent.firstVisit) {          //проверка, первый ли раз на странице
       this.subscription = this.observable.subscribe(() => {
-        this.modal = new Modal('#popup');
-        this.modal.show();
+        this.modalService.open(this.modal);
       })
     }
 
     MainComponent.firstVisit = false;   //записать, что визит будет не первый (static переменная не пересоздастся)
   }
 
+
   ngOnDestroy(): void {
-    this.modal?.hide();
     this.subscription?.unsubscribe();
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
