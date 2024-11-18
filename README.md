@@ -1,6 +1,7 @@
-# Control22
+# Tea-shop
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+Adaptive layout (Bootstrap v5, ngb-accordion, redefining styles of library components), routing, use of Angular services, data transfer between components, GET and POST requests, working with forms (validation, catalog search), loader.
 
 ## Development server
 
